@@ -1,23 +1,25 @@
 #include "lists.h"
+
 /**
- * check_cycle - Check if a linked list has a cycle in it.
- * @list: Value check.
- * Return: 0 if there is no cycle, 1 if there is a cycle.
-*/
+ * check_cycle - Detect a loped linked list
+ * @list: list head
+ *
+ * Return: 0 false, 1 true
+ */
 int check_cycle(listint_t *list)
 {
-	listint_t *actual = list, *check = list;
+listint_t *actual, *check;
 
-	if (list == NULL)
-		return (0);
+	actual = list;
+	check = list;
 
-	while (actual != NULL && check != NULL && actual->next != NULL)
+	while (actual != NULL && check != NULL && check->next != NULL)
 	{
 		actual = actual->next;
 		check = check->next->next;
-
 		if (actual == check)
 			return (1);
 	}
+
 	return (0);
 }

@@ -6,13 +6,9 @@
 */
 int check_cycle(listint_t *list)
 {
-	listint_t *actual = list;
-	listint_t *check = list;
+	listint_t *actual = list, *check = list;
 
-	if (!list)
-		return (0);
-
-	while (actual && check && actual->next)
+	while (actual != NULL && check != NULL && actual->next != NULL)
 	{
 		actual = actual->next;
 		check = check->next->next;

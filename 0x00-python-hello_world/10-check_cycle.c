@@ -6,7 +6,8 @@
 */
 int check_cycle(listint_t *list)
 {
-	listint_t *actual = list, *check = list;
+	listint_t *actual = list;
+	listint_t *check = list;
 
 	if (!list)
 		return (0);

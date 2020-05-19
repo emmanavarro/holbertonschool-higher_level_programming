@@ -10,7 +10,7 @@ class Square:
             size (int): size of square
         """
         self.__size = size
-    
+
     @property
     def size(self):
         """ Get method
@@ -18,7 +18,7 @@ class Square:
         """
         return self.__size
 
-    @size.setter    
+    @size.setter
     def size(self, value):
         self.__size = value
         if type(value) is not int:

@@ -1,3 +1,6 @@
 #!/usr/bin/python3
+# Creates a class
+
+
 class Square:
-    pass
+    pass  # Creates an empty class

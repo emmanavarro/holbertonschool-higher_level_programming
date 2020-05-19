@@ -1,8 +1,14 @@
 #!/usr/bin/python3
-# Class Square that defines a square
+""" Creates a class Square that defines a square """
+
 
 class Square:
+    """ Square class with one privete atribute """
     def __init__(self, size=0):
+        """__init__ is a constructor of square class
+        Args:
+            size (int): size of square
+        """
         self.__size = size
         if type(size) is not int:
             raise TypeError("size must be an integer")

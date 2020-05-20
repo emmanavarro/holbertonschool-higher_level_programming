@@ -3,7 +3,7 @@
 
 
 class Square:
-    """ Square class with one privete atribute """
+    """ Square class with two private atributes """
     def __init__(self, size=0, position=(0, 0)):
         """__init__ is a constructor of square class
         Args:
@@ -47,7 +47,8 @@ class Square:
                 value[0] < 0 or
                 value[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
+        else:
+            self.__position = value
 
     def area(self):
         """ Calculates the area of the current Square

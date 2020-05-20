@@ -10,9 +10,9 @@ class Square():
             size (int): size of square
             position (tuple): position of Square
         """
-        self.__size = size
+        self.size = size
         try:
-            self.__position = position
+            self.position = position
         except TypeError as err:
             print(err)
 

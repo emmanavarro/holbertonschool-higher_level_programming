@@ -11,7 +11,10 @@ class Square:
             position (tuple): position of Square
         """
         self.__size = size
-        self.__position = position
+        try:
+            self.__position = position
+        except TypeError as err:
+            print(err)
 
     @property
     def size(self):

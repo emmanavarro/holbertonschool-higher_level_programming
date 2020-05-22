@@ -32,7 +32,6 @@ negative number
     ValueError: size must be >= 0
 
 Float number:
-
     >>> print_square(5.5)
     Traceback (most recent call last):
     ...
@@ -44,8 +43,13 @@ Negative float
     ...
     TypeError: size must be an integer
 
-No number:
+Infinite float
+    >>> print_square(float('inf'))
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
 
+No number:
     >>> print_square("a")
     Traceback (most recent call last):
     ...

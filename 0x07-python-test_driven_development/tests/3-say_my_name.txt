@@ -39,3 +39,9 @@ Empty:
 One parameter
     >>> my_name("Pepito")
     My name is Pepito 
+
+None as an argument
+    >>> my_name(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string

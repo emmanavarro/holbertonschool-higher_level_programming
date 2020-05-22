@@ -66,3 +66,9 @@ Missing one argument
     Traceback (most recent call last):
     ...
     TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Test case dividing by None
+    >>> matrix_divided([[2,3], [4,1]], None)
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number

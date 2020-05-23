@@ -57,4 +57,3 @@ String with only special characters and no spaces:
 
 Empty string:
     >>> text_indentation("")
-

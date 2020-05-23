@@ -11,18 +11,18 @@ Operations
 text must be strings
 
 Import module:
->>> text_indentation = __import__("5-text_indentation").text_indentation
+    >>> text_indentation = __import__("5-text_indentation").text_indentation
 
 Uses:
 
 No arguments:
->>> text_indentation()
+    >>> text_indentation()
     Traceback (most recent call last):
     ...
     TypeError: text_indentation() missing 1 required positional argument: 'text'
 
 Int argument:
->>> text_indentation(5)
+    >>> text_indentation(5)
     Traceback (most recent call last):
     ...
     TypeError: text must be a string
@@ -37,13 +37,23 @@ String without special characters:
     >>> text_indentation("Hola Laura")
     Hola Laura
 
-String with only special characters:
+String with only special characters and spaces:
     >>> text_indentation("   ?   :   .   ")
     ?
-
+    <BLANKLINE>
     :
-
+    <BLANKLINE>
     .
+    <BLANKLINE>
+
+String with only special characters and no spaces:
+    >>> text_indentation("?:.")
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    .
+    <BLANKLINE>
 
 Empty string:
     >>> text_indentation("")

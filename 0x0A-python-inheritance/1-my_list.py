@@ -1,9 +1,12 @@
 #!/usr/bin/python3
-''' Class Mylist '''
+''' Creates a Class Mylist'''
 
 
 class MyList(list):
-    ''' Class that inherits from list '''
+    ''' Class MyList
+        Args:
+            List
+    '''
     def print_sorted(self):
         ''' prints the list '''
         return (sorted(self))

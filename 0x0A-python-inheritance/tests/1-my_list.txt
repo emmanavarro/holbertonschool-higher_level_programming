@@ -38,6 +38,12 @@ Negative parameter
     ...
     TypeError: 'int' object is not iterable
 
+>>> list = MyList([1, 'b', 10])
+    >>> list.print_sorted()
+    Traceback (most recent call last):
+    ...
+    TypeError: unorderable types: str() < int()
+
 Float parameter
     >>> my_list = MyList(2.5)
     Traceback (most recent call last):

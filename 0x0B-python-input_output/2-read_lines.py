@@ -15,3 +15,5 @@ def read_lines(filename="", nb_lines=0):
             count_line += 1
             if (nb_lines <= 0) or (nb_lines == count_line):
                 print(line, end='')
+
+    my_file.close()

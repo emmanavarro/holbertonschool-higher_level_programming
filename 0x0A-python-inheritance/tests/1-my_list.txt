@@ -36,6 +36,11 @@ Using "print_sorted"
 [10, 8]
 >>> my_list.print_sorted()
 [8, 10]
+>>> my_list.append(-48)
+>>> my_list.append(-100)
+>>> my_list.append(-2)
+>>> my_list.print_sorted()
+[-100, -48, -2, 8, 10]
 
 >>> my_list = MyList()
 >>> print(my_list)

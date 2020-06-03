@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""In this module it create a function
-    that read n line of a file
+""" In this module it create a function
+that read n line of a file
 """
 
 

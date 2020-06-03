@@ -1,70 +1,51 @@
-``MyList class`` function
+The "1-my_list.py" module
 =========================
 
-using ``MyList class``
------------------------
-first import:
+Using "print_sorted"
+------------------------
 
-    >>> MyList = __import__('1-my_list').MyList
+>>> MyList = __import__('1-my_list').MyList
 
-now use it:
+>>> my_list = MyList()
+>>> my_list.append(5)
+>>> my_list.append(99)
+>>> my_list.append(13)
+>>> my_list.append(12)
+>>> my_list.append(25)
+>>> my_list.print_sorted()
+[5, 12, 13, 25, 99]
 
-    >>> my_list = MyList()
-    >>> my_list.append(1)
-    >>> my_list.append(4)
-    >>> my_list.append(2)
-    >>> my_list.append(3)
-    >>> my_list.append(5)
-    >>> print(my_list)
-    [1, 4, 2, 3, 5]
-    >>> my_list.print_sorted()
-    [1, 2, 3, 4, 5]
-    >>> print(my_list)
-    [1, 4, 2, 3, 5]
+>>> my_list = MyList("betty")
+>>> my_list.print_sorted()
+['b', 'e', 't', 't', 'y']
 
-    >>> list = MyList([1, 'b', 10])
-    >>> list.print_sorted()
-    Traceback (most recent call last):
-    ...
-    TypeError: unorderable types: str() < int()
+>>> my_list = MyList("laura")
+>>> my_list.print_sorted()
+['a', 'a', 'l', 'r', 'u']
 
-    >>> list = MyList([10, 5, 1])
-    >>> list.print_sorted()
-    [1, 5, 10]
+>>> my_list = MyList([5, 8, 4, 10])
+>>> my_list.print_sorted()
+[4, 5, 8, 10]
 
-    >>> list = MyList([0, 1, 0, 1])
-    >>> list.print_sorted()
-    [0, 0, 1, 1]
+>>> my_list = MyList()
+>>> my_list.append(10)
+>>> my_list.append(8)
+>>> my_list.print_sorted()
+[8, 10]
+>>> my_list.append(-23)
+>>> my_list.append(-1)
+>>> my_list.print_sorted()
+[-23, -1, 8, 10]
 
-    >>> list = MyList([5, 101, -5])
-    >>> list.print_sorted()
-    [-5, 5, 101]
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
 
-    >>> list = MyList([-4, -10, -1000000])
-    >>> list.print_sorted()
-    [-1000000, -10, -4]
-
-    >>> my_list = MyList()
-    >>> my_list.print_sorted()
-    []
-
-    >>> my_list = MyList(2.5)
-    Traceback (most recent call last):
-    ...
-    TypeError: 'float' object is not iterable
-
-    >>> my_list = MyList(None)
-    Traceback (most recent call last):
-    ...
-    TypeError: 'NoneType' object is not iterable
-
-    >>> MyList = __import__('1-my_list').MyList
-    >>> my_list = MyList("hello")
-    >>> print(my_list)
-    ['h', 'e', 'l', 'l', 'o']
-    >>> my_list.print_sorted()
-    ['e', 'h', 'l', 'l', 'o']
-
-    >>> my_list.print_sorted() == my_list
-    [6, 9]
-    False
+>>> my_list = MyList()
+>>> my_list.append(9)
+>>> my_list.append(6)
+>>> print(my_list)
+[9, 6]
+>>> my_list.print_sorted() == my_list
+[6, 9]
+False

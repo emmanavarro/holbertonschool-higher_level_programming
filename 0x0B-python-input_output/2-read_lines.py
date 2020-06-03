@@ -9,7 +9,7 @@ def read_line(filename="", nb_line=0):
     text file and prints it to stdout
     """
 
-    with open(filename, mode='r') as myFile:
+    with open(filename, mode='r', encoding='utf-8') as myFile:
         if nb_line <= 0:
             print(myFile.read(), end="")
             return

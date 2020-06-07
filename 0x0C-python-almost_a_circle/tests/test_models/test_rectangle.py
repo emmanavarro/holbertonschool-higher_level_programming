@@ -245,3 +245,16 @@ class RectangleTests(unittest.TestCase):
         self.assertEqual(rec.__str__(), "[Rectangle] (33) 0/0 - 42/22")
         rec = Rectangle(88, 69)
         self.assertEqual(rec.__str__(), "[Rectangle] (34) 0/0 - 88/69")
+
+    def test17(self):
+        """
+        Test display with x & y method"""
+        R2 = Rectangle(3, 2, 1, 0)
+        R2O = " ###\n" \
+              " ###\n"
+        try:
+            R1.display()
+            self.assertEqual(sys.stdout.getvalue(), R1O)
+        finally:
+            sys.stdout.seek(0)
+            sys.stdout.truncate(0)

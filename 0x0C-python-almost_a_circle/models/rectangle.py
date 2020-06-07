@@ -100,7 +100,8 @@ class Rectangle(Base):
         attr = ["id", "width", "height", "x", "y"]
         if args:
             for index, item in enumerate(args):
-                setattr(self, attr[index], item)
+                if index < 5:
+                    setattr(self, attr[index], item)
         else:
             for key, value in kwargs.items():
                 if hasattr(self, key) is True:

@@ -106,3 +106,8 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 if hasattr(self, key) is True:
                     setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Returns the dictionary representation of Rectangle"""
+        attr = ["id", "width", "height", "x", "y"]
+        return {key: getattr(self, key) for key in attr}

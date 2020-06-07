@@ -13,7 +13,11 @@ class SquareTests(unittest.TestCase):
 
     def setUp(self):
         """Method to set the start point"""
-        self.sq = Square(1, 5, 4)
+        self.sq = Square(10, 6, 10)
+
+    def test00(self):
+        """Test 00 for square"""
+        self.assertEqual(self.sq.size, 10)
 
 
 if __name__ == '__main__':

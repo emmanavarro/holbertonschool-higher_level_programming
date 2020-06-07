@@ -263,3 +263,13 @@ class RectangleTests(unittest.TestCase):
         rec = Rectangle(10, 7, 8, 3, 1)
         rec.update(24)
         self.assertEqual(rec.__str__(), "[Rectangle] (24) 8/3 - 10/7")
+
+    def test19(self):
+        """Test 19 for Rectangle"""
+        rec = Rectangle(10, 10, 10, 10, 1)
+        rec.update(height=12)
+        self.assertEqual(rec.__str__(), "[Rectangle] (1) 10/10 - 10/12")
+        rec.update(width=12, x=2)
+        self.assertEqual(rec.__str__(), "[Rectangle] (1) 2/10 - 12/12")
+        rec.update(y=1, width=2, x=3, id=112)
+        self.assertEqual(rec.__str__(), "[Rectangle] (112) 3/1 - 2/12")

@@ -247,8 +247,7 @@ class RectangleTests(unittest.TestCase):
         self.assertEqual(rec.__str__(), "[Rectangle] (34) 0/0 - 88/69")
 
     def test17(self):
-        """
-        Test display with x & y method"""
+        """Test display with x & y method"""
         rec3 = Rectangle(3, 2, 1, 0)
         str_rec3 = " ###\n" \
                    " ###\n"
@@ -258,3 +257,9 @@ class RectangleTests(unittest.TestCase):
         finally:
             sys.stdout.seek(0)
             sys.stdout.truncate(0)
+
+    def test18(self):
+        """Test 18 for Rectangle"""
+        rec = Rectangle(10, 7, 8, 3, 1)
+        rec.update(24)
+        self.assertEqual(rec.__str__(), "[Rectangle] (24) 8/3 - 10/7")

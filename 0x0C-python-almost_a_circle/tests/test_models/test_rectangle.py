@@ -271,3 +271,7 @@ class RectangleTests(unittest.TestCase):
         self.assertEqual(rec.__str__(), "[Rectangle] (1) 2/10 - 12/10")
         rec.update(y=1, width=2, x=3, id=112)
         self.assertEqual(rec.__str__(), "[Rectangle] (112) 3/1 - 2/10")
+
+
+if __name__ == '__main__':
+    unittest.main()

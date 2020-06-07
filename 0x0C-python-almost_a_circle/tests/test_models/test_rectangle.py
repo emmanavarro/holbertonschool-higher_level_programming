@@ -249,12 +249,12 @@ class RectangleTests(unittest.TestCase):
     def test17(self):
         """
         Test display with x & y method"""
-        R2 = Rectangle(3, 2, 1, 0)
-        R2O = " ###\n" \
-              " ###\n"
+        rec3 = Rectangle(3, 2, 1, 0)
+        str_rec3 = " ###\n" \
+                   " ###\n"
         try:
-            R1.display()
-            self.assertEqual(sys.stdout.getvalue(), R1O)
+            rec3.display()
+            self.assertEqual(sys.stdout.getvalue(), str_rec3)
         finally:
             sys.stdout.seek(0)
             sys.stdout.truncate(0)

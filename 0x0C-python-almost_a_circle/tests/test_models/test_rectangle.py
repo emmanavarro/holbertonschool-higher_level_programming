@@ -5,6 +5,8 @@ Unittest for rectangle
 
 
 import unittest
+import sys
+from io import StringIO
 from models.rectangle import Rectangle
 from models.base import Base
 
@@ -15,6 +17,11 @@ class RectangleTests(unittest.TestCase):
     def setUp(self):
         """Method to set the start point"""
         self.rec = Rectangle(10, 8, 4, 2, 1)
+        sys.stdout = StringIO()
+
+    def tearDown(self):
+        """Clean everything up after running setup"""
+        sys.stdout = sys.__stdout__
 
     def test00(self):
         """Test 0 for Rectangle"""
@@ -201,3 +208,40 @@ class RectangleTests(unittest.TestCase):
         rec = Rectangle(11, 21, 0, 0)
         self.assertEqual(rec.x, 0)
         self.assertEqual(rec.y, 0)
+
+    def test14(self):
+        """Test 14 for Rectangle"""
+        rec = Rectangle(36, 27)
+        self.assertEqual(rec.area(), 972)
+        rec = Rectangle(1, 22, 1)
+        self.assertEqual(rec.area(), 22)
+        rec = Rectangle(4, 12, 6, 2)
+        self.assertEqual(rec.area(), 48)
+        rec = Rectangle(9, 6, 4, 6, 12)
+        self.assertEqual(rec.area(), 54)
+
+    def test15(self):
+        """Test 15 - display method"""
+        rec1 = Rectangle(2, 5)
+        str_rec1 = "##\n" \
+                   "##\n" \
+                   "##\n" \
+                   "##\n" \
+                   "##\n"
+        try:
+            rec1.display()
+            self.assertEqual(sys.stdout.getvalue(), str_rec1)
+        finally:
+            sys.stdout.seek(0)
+            sys.stdout.truncate(0)
+
+    def test16(self):
+        """Test 16 - Rectangle"""
+        rec = Rectangle(8, 12, 2, 1, 12)
+        self.assertEqual(rec.__str__(), "[Rectangle] (12) 2/1 - 8/12")
+        rec = Rectangle(10, 5, 8, 1)
+        self.assertEqual(rec.__str__(), "[Rectangle] (32) 8/1 - 10/5")
+        rec = Rectangle(42, 22, 0)
+        self.assertEqual(rec.__str__(), "[Rectangle] (33) 0/0 - 42/22")
+        rec = Rectangle(88, 69)
+        self.assertEqual(rec.__str__(), "[Rectangle] (34) 0/0 - 88/69")

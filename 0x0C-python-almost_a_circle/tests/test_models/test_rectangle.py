@@ -272,6 +272,13 @@ class RectangleTests(unittest.TestCase):
         rec.update(y=1, width=2, x=3, id=112)
         self.assertEqual(rec.__str__(), "[Rectangle] (112) 3/1 - 2/10")
 
+    def test20(self):
+        """Test 20 for Rectangle"""
+        rec = Rectangle(1, 2, 3, 4, 5)
+        rec_dict = {'width': 1, 'height': 2, 'x': 3, 'id': 5, 'y': 4}
+        self.assertEqual(rec.to_dictionary(), rec_dict)
+        self.assertEqual(rec.to_dictionary() is rec_dict, False)
+
 
 if __name__ == '__main__':
     unittest.main()

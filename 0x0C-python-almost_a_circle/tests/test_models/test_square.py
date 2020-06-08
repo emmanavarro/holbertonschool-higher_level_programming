@@ -19,6 +19,13 @@ class SquareTests(unittest.TestCase):
         """Test 00 for square"""
         self.assertEqual(self.sq.size, 10)
 
+    def test_01(self):
+        """Test 01 for square"""
+        sq = Square(12, 2, 1, 9)
+        sq_dict = {'x': 2, 'size': 12, 'y': 1, 'id': 9}
+        self.assertEqual(sq.to_dictionary(), sq_dict)
+        self.assertEqual(sq.to_dictionary() is s_dict, False)
+
 
 if __name__ == '__main__':
     unittest.main()

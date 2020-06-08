@@ -27,5 +27,11 @@ class BaseTests(unittest.TestCase):
         base0 = Base("text")
         self.assertEqual(base0.id, "text")
 
+    def test02(self):
+        """Test number 02 for base"""
+        b = Base.to_json_string(None)
+        self.assertEqual(b, "[]")
+
+
 if __name__ == '__main__':
     unittest.main()

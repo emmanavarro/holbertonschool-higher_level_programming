@@ -5,7 +5,37 @@ Unittest for Square
 
 
 import unittest
+import pep8
 from models.square import Square
+from models import square
+
+
+class Test_Doc_Square(unittest.TestCase):
+    """ checking for documentation """
+    def test_module_doc(self):
+        """ checking for module documentation """
+        self.assertTrue(len(square.__doc__) > 0)
+
+    def test_class_doc(self):
+        """ checking for class documentation """
+        self.assertTrue(len(Square.__doc__) > 0)
+
+    def test_method_docs(self):
+        """ checking for method documentation """
+        for func in dir(Square):
+            self.assertTrue(len(func.__doc__) > 0)
+
+
+class Test_Pep8_Square(unittest.TestCase):
+    """ checking for pep8 validation """
+    def test_pep8(self):
+        """ testing square and test_square for pep8 """
+        style = pep8.StyleGuide(quiet=True)
+        file1 = 'models/square.py'
+        file2 = 'tests/test_models/test_square.py'
+        result = style.check_files([file1, file2])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warning).")
 
 
 class SquareTests(unittest.TestCase):

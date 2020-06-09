@@ -76,7 +76,3 @@ class SquareTests(unittest.TestCase):
         """Size is not a integer"""
 
         self.assertRaises(TypeError, Square, "Hello")
-
-
-if __name__ == '__main__':
-    unittest.main()

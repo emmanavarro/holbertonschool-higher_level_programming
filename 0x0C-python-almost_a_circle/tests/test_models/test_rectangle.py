@@ -9,6 +9,37 @@ import sys
 from io import StringIO
 from models.rectangle import Rectangle
 from models.base import Base
+from models import rectangle
+import pep8
+
+
+class Test_Doc_Rectangle(unittest.TestCase):
+    """ checking for documentation """
+    def test_module_doc(self):
+        """ checking for module documentation """
+        self.assertTrue(len(rectangle.__doc__) > 0)
+
+    def test_class_doc(self):
+        """ checking for class documentation """
+        self.assertTrue(len(Rectangle.__doc__) > 0)
+
+    def test_method_docs(self):
+        """ checking for method documentation """
+        for func in dir(Rectangle):
+            self.assertTrue(len(func.__doc__) > 0)
+
+
+class Test_Pep8_Rectangle(unittest.TestCase):
+    """ checking for pep8 validation """
+    def test_pep8(self):
+        """ test rectangle and test_rectangle
+            for pep8 conformance """
+        style = pep8.StyleGuide(quiet=True)
+        file1 = 'models/rectangle.py'
+        file2 = 'tests/test_models/test_rectangle.py'
+        result = style.check_files([file1, file2])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warning).")
 
 
 class RectangleTests(unittest.TestCase):
@@ -278,7 +309,3 @@ class RectangleTests(unittest.TestCase):
         rec_dict = {'width': 1, 'height': 2, 'x': 3, 'id': 5, 'y': 4}
         self.assertEqual(rec.to_dictionary(), rec_dict)
         self.assertEqual(rec.to_dictionary() is rec_dict, False)
-
-
-if __name__ == '__main__':
-    unittest.main()

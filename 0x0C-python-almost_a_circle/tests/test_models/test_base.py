@@ -105,7 +105,3 @@ class BaseTests(unittest.TestCase):
         """Test number 10 for base"""
         rect = Base.to_json_string(None)
         self.assertEqual(rect, "[]")
-
-
-if __name__ == '__main__':
-    unittest.main()

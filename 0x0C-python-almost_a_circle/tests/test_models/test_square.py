@@ -26,6 +26,27 @@ class SquareTests(unittest.TestCase):
         self.assertEqual(sq.to_dictionary(), sq_dict)
         self.assertEqual(sq.to_dictionary() is sq_dict, False)
 
+    def test_x(self):
+        """test x """
+
+        self.assertEqual(self.sq.x, 6)
+
+    def test_y(self):
+        """test y """
+
+        self.assertEqual(self.sq.y, 10)
+
+    def test_negative(self):
+        """test negative size"""
+
+        with self.assertRaises(ValueError):
+            ob = Square(-1)
+
+    def test_sizeSetter(self):
+        """Size is not a integer"""
+
+        self.assertRaises(TypeError, Square, "Hello")
+
 
 if __name__ == '__main__':
     unittest.main()

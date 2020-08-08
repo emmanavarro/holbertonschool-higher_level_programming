@@ -24,12 +24,12 @@ if __name__ == "__main__":
     # create a Session
     session = Session()
     # create a new object
-    new_state = State(name='Lousiana')
+    new_state = State(name='Louisiana')
     # add a new object
     session.add(new_state)
     # confirm the current transaction
     session.commit()
     # print the new table after creation
-    print(session.query(State).filter_by(name='Lousiana').first().id)
+    print(session.query(State).filter_by(name="Louisiana").first().id)
     # close the session
     session.close()

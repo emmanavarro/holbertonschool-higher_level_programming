@@ -28,3 +28,5 @@ if __name__ == "__main__":
             State.id == City.state_id).all()
     for state, city in query:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
+    # close a session
+    session.close()

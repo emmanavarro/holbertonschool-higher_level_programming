@@ -7,7 +7,7 @@ class Square extends Square1 {
       this.print();
     } else {
       for (let letter = 0; letter < this.height; letter++) {
-        console.log('C'.repeat(this.width));
+        console.log(c.repeat(this.width));
       }
     }
   }

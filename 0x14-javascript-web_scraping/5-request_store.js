@@ -8,7 +8,7 @@ request.get(url, function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
-    fs.writeFile(toFile, body, function(error) {
+    fs.writeFile(toFile, body, function (error) {
       if (error) console.log(error);
     });
   }

@@ -69,6 +69,13 @@ Write a Javascript script that fetches and lists all movies title by using this 
 
 ### [9. Say Hello!](./9-script.js)
 Write a Javascript script that fetches from https://fourtonfish.com/hellosalut/?lang=fr and displays the value of hello from that fetch in the HTML’s tag DIV#hello.
+
+### [10. No jQuery - document loaded](./100-script.js)
+Write a Javascript script that updates the text color of the HTML tag HEADER to red (#FF0000):
+
+* You must use document.querySelector to select the HTML tag
+* You can’t use the jQuery API
+* Note: Your script must be imported from the HEAD tag, not at the end of the HTML
 ___
 
 ## Author
